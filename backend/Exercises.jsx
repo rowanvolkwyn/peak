@@ -1,0 +1,1 @@
+exercises = ['benchPress', 'squat', 'deadlift'];
