@@ -49,12 +49,12 @@ p {
     margin: 0 0 10px;
 }
 
-#exercise-input {
+#exercise {
     width: 90%;
     margin: auto;
 }
 
-#exercise {
+#exercise-form {
     display: flex;
     flex-direction: column;
 }
