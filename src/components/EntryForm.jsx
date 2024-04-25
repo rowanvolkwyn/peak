@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './EntryForm.css';
+import { handleNewData } from '../backend/handleNewData';
 
 const EntryForm = () => {
 
@@ -12,6 +13,7 @@ const EntryForm = () => {
         e.preventDefault();
         console.log('Form Submitted', {exercise, weight, reps, rpe});
         // Add code to handle this data and store it e.g handleNewData()
+        handleNewData(exercise, weight, reps, rpe);
         setExercise('');
         setWeight('');
         setReps('');
@@ -21,11 +23,11 @@ const EntryForm = () => {
     return (
         <div id='card'>
             <h2 id='title'>New Entry</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div id='exercise-form'>
                     <h6>Exercise:</h6>
                     <input 
-                        class='input-info'
+                        className='input-info'
                         id='exercise'
                         type='text'
                         maxLength={80}
@@ -35,10 +37,10 @@ const EntryForm = () => {
                     />
                     <h6>Set 1</h6>
                     <div id='sets'>
-                        <div class='sets-info' id='weight'>
+                        <div className='sets-info' id='weight'>
                             <p>Weight (KG)</p>
                             <input
-                                class='input-info'
+                                className='input-info'
                                 id='weight'
                                 type='number'
                                 maxLength={3}
@@ -47,10 +49,10 @@ const EntryForm = () => {
                                 required
                             />
                         </div>
-                        <div class='sets-info' id='reps'>
+                        <div className='sets-info' id='reps'>
                             <p>Reps</p>
                             <input
-                                class='input-info'
+                                className='input-info'
                                 id='reps'
                                 type='number'
                                 maxLength={3}
@@ -59,10 +61,10 @@ const EntryForm = () => {
                                 required
                             />
                         </div> 
-                        <div class='sets-info' id='rpe'>
+                        <div className='sets-info' id='rpe'>
                             <p>RPE</p>
                             <input
-                                class='input-info'
+                                className='input-info'
                                 id='rpe'
                                 type='text'
                                 min={1}
