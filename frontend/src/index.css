@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --content: #7B7B8E;
+  --background: #393E41;
+  --accent1: #03CEA4;
+  --accent2: #DB5A42;
+}
+
+body {
+  background: white;
+  margin: 0;
+  font-family: 'Encode Sans Semi Condensed';
+  color: var(--background);
+}
+
+header {
+  background: var(--background);
+}
+
+p {
+  color: var(--background);
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background-color: #393E41;
+  color: white;
+}
+
+#branding {
+  width: 50%;
+  justify-content: start;
+}
+
+#links {
+  display: flex;
+  width: 50%;
+  justify-content: end;
+  gap: 20px;
+}
+
+#links p {
+  color: white;
+}
+
+#links p:hover {
+  color: var(--accent1);
+  transition-duration: 0.3;
+}
