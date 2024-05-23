@@ -1,25 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --content: #7B7B8E;
-  --background: #393E41;
-  --accent1: #03CEA4;
-  --accent2: #DB5A42;
+  --background: #202124;
+  --foreground: #3c4042;
+  --tertiary: #616369;
+  --accent: #DB5A42;
+  --confirm: #03CEA4;
+  --error: #e7195a;
 }
 
 body {
   background: white;
   margin: 0;
   font-family: 'Encode Sans Semi Condensed';
-  color: var(--background);
+  color: white;
+  background-color: var(--background);
 }
 
 header {
   background: var(--background);
 }
 
-p {
-  color: var(--background);
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+   margin: 0 auto;
 }
 
 #nav {
@@ -49,4 +68,77 @@ p {
 #links p:hover {
   color: var(--accent1);
   transition-duration: 0.3;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+
+.workout-details {
+  background: var(--foreground);
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-details h4 {
+  color: white;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.workout-details p {
+  color: white;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.workout-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: var(--accent);
+  padding: 6px;
+  border-radius: 50%;
+  color: white;
+}
+
+
+/* Workout Form */
+label, input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--confirm);
+  border: 0;
+  color: white;
+  padding: 10px;
+  font-family: 'Encode Sans Semi Condensed';
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
 }
