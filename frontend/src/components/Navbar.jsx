@@ -8,8 +8,7 @@ const Navbar = () => {
                 <h1>PEAK</h1>
             </div>
             <div id='links'>
-                <NavLink to="/"><p>Home</p></NavLink>
-                <NavLink to="/about"><p>About</p></NavLink>
+
             </div>
         </div>
     )
