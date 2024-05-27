@@ -14,6 +14,10 @@ const workoutSchema = new Schema({
     load: {
         type: Number,
         required: true
+    },
+    rpe: {
+        type: Number,
+        required: true
     }
 }, { timestamps: true});
 

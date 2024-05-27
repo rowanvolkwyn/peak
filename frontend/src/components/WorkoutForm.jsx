@@ -6,13 +6,14 @@ const WorkoutForm = () => {
     const [ title, setTitle ] = useState('');
     const [ load, setLoad ] = useState('');
     const [ reps, setReps ] = useState('');
+    const [ rpe, setRpe ] = useState('');
     const [ error, setError ] = useState(null);
     const [ emptyFields, setEmptyFields] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const workout =  {title, load, reps};
+        const workout =  {title, load, reps, rpe};
 
         const response = await fetch('/api/workouts', {
             method: 'POST',
@@ -20,7 +21,7 @@ const WorkoutForm = () => {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
+        });
         const json = await response.json()
 
         if (!response.ok) {
@@ -32,6 +33,7 @@ const WorkoutForm = () => {
             setTitle('');
             setLoad('');
             setReps('');
+            setRpe('');
             setError(null);
             setEmptyFields([]);
             console.log('New workout added', json)
@@ -73,6 +75,18 @@ const WorkoutForm = () => {
                 value={reps}
                 className={
                     emptyFields.includes('reps')
+                    ? 'error'
+                    : ''
+                }
+            />
+
+            <label>RPE:</label>
+            <input
+                type="text"
+                onChange={(e) => setRpe(e.target.value)}
+                value={rpe}
+                className={
+                    emptyFields.includes('rpe')
                     ? 'error'
                     : ''
                 }
