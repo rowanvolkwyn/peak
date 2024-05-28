@@ -147,3 +147,18 @@ input.error {
   border: 1px solid var(--error);
   background: #FF5C5C;
 }
+
+/* Records Page */
+th {
+  background: #F5CB5C;
+  color: black;
+  padding: 5px;
+  width: 40px;
+  font-size: 9px;
+}
+
+tbody {
+  background: #FCE6AE;
+  color: black;
+  text-align: center;
+}

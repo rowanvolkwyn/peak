@@ -2,7 +2,7 @@ import './index.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
+import Records from './pages/Records';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -17,8 +17,8 @@ function App() {
               element={<Home />}
             />
             <Route
-              path="/about"
-              element={<About />}
+              path="/records"
+              element={<Records />}
             />
           </Routes>
         </div>
