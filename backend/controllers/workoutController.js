@@ -29,7 +29,7 @@ const getWorkout = async (req, res) => {
 
 // create new workout
 const createWorkout = async (req, res) => {
-    const {title, load, reps} = req.body;
+    const {title, load, reps, rpe} = req.body;
 
     let emptyFields = [];
 
@@ -52,7 +52,7 @@ const createWorkout = async (req, res) => {
 
     // add document to database
     try {
-        const workout = await Workout.create({title, load, reps});
+        const workout = await Workout.create({title, load, reps, rpe});
         res.status(200).json(workout);
     } catch (error) {
         res.status(400).json({error: error.message});
