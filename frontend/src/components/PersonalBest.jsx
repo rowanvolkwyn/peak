@@ -1,8 +1,9 @@
-const PersonalBest = () => {
-
+const PersonalBest = ({ exercise }) => {
+    const title = exercise;
+    console.log(exercise);
     return (
         <div>
-        <h2>YEET</h2>
+        <h2>{exercise}</h2>
         <table>
             <thead>
                 <tr>

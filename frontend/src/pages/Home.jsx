@@ -4,6 +4,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext.js"
 // Components
 import WorkoutDetails from '../components/WorkoutDetails';
 import WorkoutForm from "../components/WorkoutForm";
+import PersonalBest from "../components/PersonalBest.jsx";
 
 const Home = () => {
     const { workouts, dispatch } = useWorkoutsContext();
@@ -22,7 +23,15 @@ const Home = () => {
 
     return (
         <div className='home'>
+            <div className='records'>
+                <PersonalBest 
+                    exercise={'Deadlift'}
+                />
+            </div>
             <div className="workouts">
+                <div className="form">
+                    <WorkoutForm /> 
+                </div>
                 {workouts && workouts.map((workout) => (
                     <WorkoutDetails 
                         key={workout._id}
@@ -30,7 +39,7 @@ const Home = () => {
                     />
                 ))}
             </div>
-            <WorkoutForm />
+            
         </div>
     )
 }

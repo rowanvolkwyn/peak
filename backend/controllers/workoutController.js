@@ -8,6 +8,19 @@ const getWorkouts = async (req, res) => {
     res.status(200).json(workouts);
 }
 
+// get all workouts
+const getRecord = async (req, res) => {
+    const { title } = req.params;
+    const records = [];
+
+    //find the workout with the highest load for each rep range
+    for (let reps = 1; reps <= 10; reps++) {
+        const record = await Workout.find({ title, reps }).sort({load: -1}).limit(1).select('load reps');
+        records.push(record);
+    }
+
+    res.status(200).json(records);
+}
 
 // get a single workout
 const getWorkout = async (req, res) => {
@@ -25,7 +38,6 @@ const getWorkout = async (req, res) => {
 
     res.status(200).json(workout);
 }
-
 
 // create new workout
 const createWorkout = async (req, res) => {
@@ -53,7 +65,7 @@ const createWorkout = async (req, res) => {
     // add document to database
     try {
         const workout = await Workout.create({title, load, reps, rpe});
-        res.status(200).json(workout);
+        res.status(201).json(workout);
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -76,6 +88,7 @@ const deleteWorkout = async (req, res) => {
 
     res.status(200).json(workout);
 }
+
 // update a workout
 const updateWorkout = async (req, res) => {
     const { id } = req.params
@@ -96,6 +109,7 @@ const updateWorkout = async (req, res) => {
 
 module.exports = {
     getWorkouts,
+    getRecord,
     getWorkout,
     createWorkout,
     deleteWorkout,

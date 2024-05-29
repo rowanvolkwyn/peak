@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {
     getWorkouts,
+    getRecord,
     getWorkout,
     createWorkout, 
     deleteWorkout,
@@ -13,6 +14,9 @@ router.get('/', getWorkouts);
 
 // GET single workout
 router.get('/:id', getWorkout);
+
+// GET workout records
+router.get('/records/:title', getRecord);
 
 // POST a new workout
 router.post('/', createWorkout);

@@ -70,10 +70,16 @@ header a {
   transition-duration: 0.3;
 }
 
+
+/* Home Page */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 100px;
+}
+
+.form {
+  margin-bottom: 50px;
 }
 
 .workout-details {
