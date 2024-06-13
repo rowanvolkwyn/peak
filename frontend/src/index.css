@@ -54,6 +54,11 @@ header a {
   justify-content: start;
 }
 
+#branding h1:hover {
+  color: var(--confirm);
+  transition: 100ms;
+}
+
 #links {
   display: flex;
   width: 50%;
@@ -155,6 +160,12 @@ input.error {
 }
 
 /* Records Page */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
 th {
   background: #F5CB5C;
   color: black;

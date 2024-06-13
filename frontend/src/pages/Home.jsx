@@ -27,6 +27,12 @@ const Home = () => {
                 <PersonalBest 
                     exercise={'Deadlift'}
                 />
+                <PersonalBest 
+                    exercise={'Squat'}
+                />
+                <PersonalBest 
+                    exercise={'Bench Press'}
+                />
             </div>
             <div className="workouts">
                 <div className="form">
