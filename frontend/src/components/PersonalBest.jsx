@@ -1,6 +1,8 @@
 const PersonalBest = ({ exercise }) => {
     const title = exercise;
     console.log(exercise);
+
+    
     return (
         <div>
         <h2>{exercise}</h2>
